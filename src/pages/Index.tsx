@@ -1,18 +1,21 @@
 
 import { useEffect, useState } from "react";
-import { Github, Gitlab, Instagram, Linkedin, Facebook } from "lucide-react";
+import { Github, Gitlab, Instagram, Linkedin, Facebook, Mail } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Navigation from "../components/Navigation";
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Initialize AOS
+    // Initialize AOS with enhanced settings
     AOS.init({
       duration: 800,
       easing: 'ease-out-cubic',
       once: false,
+      mirror: true,
+      offset: 120,
     });
     
     // Set loaded after a small delay to ensure smooth animation start
@@ -25,30 +28,54 @@ const Index = () => {
 
   return (
     <div className={`min-h-screen transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      {/* Navigation */}
+      <Navigation />
+      
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center bg-hero-pattern">
+      <section className="relative min-h-screen flex flex-col justify-center items-center">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 -z-10"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')] bg-cover bg-center opacity-[0.03] -z-10"></div>
+        
         <div className="container px-4 mx-auto">
           <div data-aos="fade-up" data-aos-delay="200" className="text-center">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-display">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
                 John Doe
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-portfolio-muted max-w-2xl mx-auto">
-              Welcome to my personal space on the web
+            <p className="text-xl md:text-2xl text-portfolio-muted max-w-2xl mx-auto font-light">
+              Designer & Developer
             </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <a 
+                href="#about" 
+                className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="600"
+              >
+                About Me
+              </a>
+              <a 
+                href="#contact"
+                className="px-6 py-3 bg-white/80 backdrop-blur-sm text-primary rounded-full border border-primary/20 hover:bg-white transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
+                data-aos="fade-up"
+                data-aos-delay="700"
+              >
+                Get In Touch
+              </a>
+            </div>
           </div>
         </div>
         
         <div className="absolute bottom-10 left-0 right-0 flex justify-center">
           <a 
             href="#about" 
-            className="animate-bounce rounded-full bg-white p-3 shadow-soft"
+            className="animate-bounce rounded-full bg-white/80 backdrop-blur-sm p-3 shadow-md hover:shadow-lg transition-all"
             aria-label="Scroll to About section"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
-              className="h-6 w-6 text-gray-500" 
+              className="h-6 w-6 text-primary" 
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -65,8 +92,13 @@ const Index = () => {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="section bg-white">
+      <section id="about" className="section py-24 md:py-32 bg-white relative overflow-hidden">
         <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">About Me</h2>
+            <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+          </div>
+          
           <div className="lg:flex items-center gap-16">
             <div 
               className="lg:w-2/5 mb-10 lg:mb-0" 
@@ -74,17 +106,22 @@ const Index = () => {
               data-aos-delay="300"
             >
               <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-soft-lg">
+                <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                     alt="John Doe portrait"
-                    className="w-full h-auto object-cover"
+                    className="w-full h-auto object-cover aspect-[3/4]"
                   />
                 </div>
                 <div 
-                  className="absolute -bottom-6 -right-6 h-40 w-40 bg-accent-gradient rounded-full opacity-60 -z-10"
+                  className="absolute -bottom-10 -right-10 h-48 w-48 bg-accent-gradient rounded-full opacity-60 -z-10"
                   data-aos="zoom-in"
                   data-aos-delay="600"
+                ></div>
+                <div 
+                  className="absolute -top-6 -left-6 h-24 w-24 bg-blue-100 rounded-full opacity-60 -z-10"
+                  data-aos="zoom-in"
+                  data-aos-delay="700"
                 ></div>
               </div>
             </div>
@@ -94,12 +131,12 @@ const Index = () => {
               data-aos="fade-left" 
               data-aos-delay="400"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+              <h3 className="text-2xl font-bold mb-6 font-display">Hello! I'm John Doe</h3>
               
               <p className="text-lg mb-6 leading-relaxed">
-                Hello! I'm John Doe, a passionate creator based in San Francisco. With 
-                over 8 years of experience in design and development, I've had the pleasure
-                of working with various clients across different industries.
+                A passionate creator based in San Francisco with over 8 years of experience in design and development. 
+                I've had the privilege of working with clients across various industries, helping them bring their 
+                digital visions to life.
               </p>
               
               <p className="text-lg mb-8 leading-relaxed">
@@ -110,7 +147,7 @@ const Index = () => {
               </p>
               
               <div 
-                className="flex flex-wrap gap-3"
+                className="flex flex-wrap gap-3 mb-8"
                 data-aos="fade-up"
                 data-aos-delay="500"
               >
@@ -123,66 +160,85 @@ const Index = () => {
                   </span>
                 ))}
               </div>
+              
+              <div data-aos="fade-up" data-aos-delay="600">
+                <a 
+                  href="#contact" 
+                  className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
+                >
+                  Get In Touch
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section bg-portfolio-soft-bg">
+      <section id="contact" className="section py-24 md:py-32 bg-portfolio-soft-bg relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 -z-10"></div>
+        
         <div className="container px-4 mx-auto">
           <div className="text-center max-w-2xl mx-auto">
             <h2 
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-3xl md:text-4xl font-bold mb-4 font-display"
               data-aos="fade-up"
               data-aos-delay="200"
             >
               Get In Touch
             </h2>
             
+            <div className="h-1 w-20 bg-primary mx-auto rounded-full mb-8" data-aos="fade-up" data-aos-delay="300"></div>
+            
             <p 
               className="text-lg mb-10 leading-relaxed"
               data-aos="fade-up"
-              data-aos-delay="300"
+              data-aos-delay="400"
             >
               Feel free to reach out if you'd like to collaborate, have questions,
               or just want to say hello. You can also explore my projects on GitLab and GitHub.
             </p>
             
             <div 
-              className="flex justify-center space-x-6 md:space-x-8"
+              className="flex flex-wrap justify-center gap-6 md:gap-8"
               data-aos="fade-up"
-              data-aos-delay="400"
+              data-aos-delay="500"
             >
               <SocialLink 
                 href="https://github.com" 
                 icon={<Github className="h-6 w-6" />}
                 label="GitHub"
-                delay={500}
+                delay={600}
               />
               <SocialLink 
                 href="https://gitlab.com" 
                 icon={<Gitlab className="h-6 w-6" />}
                 label="GitLab"
-                delay={600}
+                delay={700}
               />
               <SocialLink 
                 href="https://linkedin.com" 
                 icon={<Linkedin className="h-6 w-6" />}
                 label="LinkedIn"
-                delay={700}
+                delay={800}
               />
               <SocialLink 
                 href="https://instagram.com" 
                 icon={<Instagram className="h-6 w-6" />}
                 label="Instagram"
-                delay={800}
+                delay={900}
               />
               <SocialLink 
                 href="https://facebook.com" 
                 icon={<Facebook className="h-6 w-6" />}
                 label="Facebook"
-                delay={900}
+                delay={1000}
+              />
+              <SocialLink 
+                href="mailto:john.doe@example.com" 
+                icon={<Mail className="h-6 w-6" />}
+                label="Email"
+                delay={1100}
               />
             </div>
           </div>
@@ -214,7 +270,7 @@ const SocialLink = ({ href, icon, label, delay }) => {
       data-aos="zoom-in"
       data-aos-delay={delay}
     >
-      <div className="social-icon flex items-center justify-center h-12 w-12 rounded-full bg-white shadow-soft hover:shadow-soft-lg transition-all duration-300">
+      <div className="social-icon flex items-center justify-center h-14 w-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
         <div className="social-icon text-portfolio-muted group-hover:text-primary">
           {icon}
         </div>
