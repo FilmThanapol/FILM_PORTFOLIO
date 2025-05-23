@@ -34,7 +34,8 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 -z-10"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80')] bg-cover bg-center opacity-[0.03] -z-10"></div>
+        <div className="absolute inset-0 bg-[url('https://marketplace.canva.com/EAFVgQ8m8cg/1/0/800w/canva-%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-%E0%B8%AA%E0%B8%B5%E0%B8%8A%E0%B8%A1%E0%B8%9E%E0%B8%B9-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%88%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A-%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%B2%E0%B8%AC-%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5-s7wLtejoZLY.jpg')]
+         bg-cover bg-center opacity-[0.07] -z-10"></div>
         
         <div className="container px-4 mx-auto">
           <div data-aos="fade-up" data-aos-delay="200" className="text-center">
@@ -131,7 +132,7 @@ const Index = () => {
               data-aos="fade-left" 
               data-aos-delay="400"
             >
-              <h3 className="text-2xl font-bold mb-6 font-display">Hello! I'm John Doe</h3>
+              <h3 className="text-2xl font-bold mb-6 font-display">สวัสดี ผมชื่อฟิล์ม</h3>
               
               <p className="text-lg mb-6 leading-relaxed">
                 A passionate creator based in San Francisco with over 8 years of experience in design and development. 
@@ -205,13 +206,13 @@ const Index = () => {
               data-aos-delay="500"
             >
               <SocialLink 
-                href="https://github.com" 
+                href="https://github.com/FilmThanapol" 
                 icon={<Github className="h-6 w-6" />}
                 label="GitHub"
                 delay={600}
               />
               <SocialLink 
-                href="https://gitlab.com" 
+                href="https://gitlab.com/65160072" 
                 icon={<Gitlab className="h-6 w-6" />}
                 label="GitLab"
                 delay={700}
@@ -223,13 +224,13 @@ const Index = () => {
                 delay={800}
               />
               <SocialLink 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/film_thanapol/" 
                 icon={<Instagram className="h-6 w-6" />}
                 label="Instagram"
                 delay={900}
               />
               <SocialLink 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/thn.phl.ci.ra.phr" 
                 icon={<Facebook className="h-6 w-6" />}
                 label="Facebook"
                 delay={1000}
@@ -250,7 +251,7 @@ const Index = () => {
         <div className="container px-4 mx-auto">
           <div className="text-center">
             <p className="text-portfolio-muted">
-              &copy; {new Date().getFullYear()} John Doe. All rights reserved.
+              &copy; {new Date().getFullYear()} FILM. All rights reserved.
             </p>
           </div>
         </div>
