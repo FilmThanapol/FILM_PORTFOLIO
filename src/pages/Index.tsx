@@ -40,11 +40,11 @@ const Index = () => {
           <div data-aos="fade-up" data-aos-delay="200" className="text-center">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-display">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
-                John Doe
+                FILM
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-portfolio-muted max-w-2xl mx-auto font-light">
-              Designer & Developer
+              Business Analyst & Designer
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a 
@@ -108,7 +108,7 @@ const Index = () => {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    src="https://www.liveonegoodlife.com/wp-content/uploads/2021/03/word-image.jpeg"
                     alt="John Doe portrait"
                     className="w-full h-auto object-cover aspect-[3/4]"
                   />
