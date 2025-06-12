@@ -132,19 +132,18 @@ const Index = () => {
               data-aos="fade-left" 
               data-aos-delay="400"
             >
-              <h3 className="text-2xl font-bold mb-6 font-display text-card-foreground">สวัสดี ผมชื่อฟิล์ม</h3>
+              <h3 className="text-2xl font-bold mb-6 font-display text-card-foreground">Hi there! I'm Film 👋</h3>
               
               <p className="text-lg mb-6 leading-relaxed text-muted-foreground">
-                A passionate creator based in San Francisco with over 8 years of experience in design and development. 
-                I've had the privilege of working with clients across various industries, helping them bring their 
-                digital visions to life.
+                I'm a Computer Science student who enjoys building things that are both useful and easy to use.
+                I'm especially curious about Business Analysis and Frontend Development—I love figuring out how things work, 
+                designing clean interfaces, and making ideas come to life on screen.
               </p>
               
               <p className="text-lg mb-8 leading-relaxed text-muted-foreground">
-                My approach combines creative thinking with technical expertise to deliver
-                solutions that not only look great but also perform exceptionally well.
-                I believe in the power of clean design, intuitive user experiences, and
-                accessible technology.
+                Outside of class, I like to explore new tools, try out design ideas, and learn from real-world projects 
+                (and yes, I get excited about small UI details too).
+                I'm always open to new challenges, ready to learn, and excited to grow as a developer and problem solver.
               </p>
               
               <div 
