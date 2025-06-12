@@ -37,7 +37,7 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <a href="#" className="text-2xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
-          FILM
+          FILM 
         </a>
         
         {/* Desktop Navigation */}

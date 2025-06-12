@@ -110,7 +110,7 @@ const Index = () => {
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
                   <img
                     src="https://www.liveonegoodlife.com/wp-content/uploads/2021/03/word-image.jpeg"
-                    alt="John Doe portrait"
+                    alt="Thanapol Chiraporn"
                     className="w-full h-auto object-cover aspect-[3/4]"
                   />
                 </div>
