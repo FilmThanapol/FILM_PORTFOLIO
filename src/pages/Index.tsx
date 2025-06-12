@@ -35,7 +35,7 @@ const Index = () => {
       <section className="relative min-h-screen flex flex-col justify-center items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800 -z-10"></div>
         <div className="absolute inset-0 bg-[url('https://marketplace.canva.com/EAFVgQ8m8cg/1/0/800w/canva-%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-%E0%B8%AA%E0%B8%B5%E0%B8%8A%E0%B8%A1%E0%B8%9E%E0%B8%B9-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%88%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A-%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%B2%E0%B8%AC-%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5-s7wLtejoZLY.jpg')]
-         bg-cover bg-center opacity-[0.07] dark:opacity-[0.03] -z-10"></div>
+         bg-cover bg-center opacity-[0.12] dark:opacity-[0.03] -z-10"></div>
         
         <div className="container px-4 mx-auto">
           <div data-aos="fade-up" data-aos-delay="200" className="text-center">
