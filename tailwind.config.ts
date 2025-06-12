@@ -63,13 +63,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Portfolio-specific colors
+				// Portfolio-specific colors that work in both light and dark modes
 				portfolio: {
-					'soft-bg': '#F9F7F3',
-					'accent': '#E5DEFF',
-					'text': '#333333',
-					'muted': '#8E9196',
-					'border': '#EAEAEA',
+					'soft-bg': 'hsl(var(--background))',
+					'accent': 'hsl(var(--accent))',
+					'text': 'hsl(var(--foreground))',
+					'muted': 'hsl(var(--muted-foreground))',
+					'border': 'hsl(var(--border))',
 				}
 			},
 			borderRadius: {
