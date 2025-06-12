@@ -33,24 +33,24 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-900 dark:to-slate-800 -z-10"></div>
         <div className="absolute inset-0 bg-[url('https://marketplace.canva.com/EAFVgQ8m8cg/1/0/800w/canva-%E0%B8%AA%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87-%E0%B8%AA%E0%B8%B5%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99-%E0%B8%AA%E0%B8%B5%E0%B8%8A%E0%B8%A1%E0%B8%9E%E0%B8%B9-%E0%B8%AA%E0%B8%B5%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%87-%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%88%E0%B8%AD%E0%B8%84%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%B4%E0%B8%A7%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A-%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%B2%E0%B8%AC-%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%A5-s7wLtejoZLY.jpg')]
-         bg-cover bg-center opacity-[0.07] -z-10"></div>
+         bg-cover bg-center opacity-[0.07] dark:opacity-[0.03] -z-10"></div>
         
         <div className="container px-4 mx-auto">
           <div data-aos="fade-up" data-aos-delay="200" className="text-center">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-display">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600 dark:from-primary dark:to-purple-400">
                 FILM
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-portfolio-muted max-w-2xl mx-auto font-light">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto font-light">
               Business Analyst & Designer
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a 
                 href="#about" 
-                className="px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
+                className="px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
                 data-aos="fade-up"
                 data-aos-delay="600"
               >
@@ -58,7 +58,7 @@ const Index = () => {
               </a>
               <a 
                 href="#contact"
-                className="px-6 py-3 bg-white/80 backdrop-blur-sm text-primary rounded-full border border-primary/20 hover:bg-white transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
+                className="px-6 py-3 bg-card border border-border text-card-foreground rounded-full hover:bg-accent transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
                 data-aos="fade-up"
                 data-aos-delay="700"
               >
@@ -71,7 +71,7 @@ const Index = () => {
         <div className="absolute bottom-10 left-0 right-0 flex justify-center">
           <a 
             href="#about" 
-            className="animate-bounce rounded-full bg-white/80 backdrop-blur-sm p-3 shadow-md hover:shadow-lg transition-all"
+            className="animate-bounce rounded-full bg-card border border-border p-3 shadow-md hover:shadow-lg transition-all"
             aria-label="Scroll to About section"
           >
             <svg 
@@ -93,10 +93,10 @@ const Index = () => {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="section py-24 md:py-32 bg-white relative overflow-hidden">
+      <section id="about" className="section py-24 md:py-32 bg-card relative overflow-hidden">
         <div className="container px-4 mx-auto">
           <div className="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">About Me</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display text-card-foreground">About Me</h2>
             <div className="h-1 w-20 bg-primary mx-auto rounded-full"></div>
           </div>
           
@@ -107,7 +107,7 @@ const Index = () => {
               data-aos-delay="300"
             >
               <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
                   <img
                     src="https://www.liveonegoodlife.com/wp-content/uploads/2021/03/word-image.jpeg"
                     alt="Thanapol Chiraporn"
@@ -115,12 +115,12 @@ const Index = () => {
                   />
                 </div>
                 <div 
-                  className="absolute -bottom-10 -right-10 h-48 w-48 bg-accent-gradient rounded-full opacity-60 -z-10"
+                  className="absolute -bottom-10 -right-10 h-48 w-48 bg-gradient-to-br from-primary/20 to-purple-400/20 rounded-full -z-10"
                   data-aos="zoom-in"
                   data-aos-delay="600"
                 ></div>
                 <div 
-                  className="absolute -top-6 -left-6 h-24 w-24 bg-blue-100 rounded-full opacity-60 -z-10"
+                  className="absolute -top-6 -left-6 h-24 w-24 bg-accent rounded-full -z-10"
                   data-aos="zoom-in"
                   data-aos-delay="700"
                 ></div>
@@ -132,15 +132,15 @@ const Index = () => {
               data-aos="fade-left" 
               data-aos-delay="400"
             >
-              <h3 className="text-2xl font-bold mb-6 font-display">สวัสดี ผมชื่อฟิล์ม</h3>
+              <h3 className="text-2xl font-bold mb-6 font-display text-card-foreground">สวัสดี ผมชื่อฟิล์ม</h3>
               
-              <p className="text-lg mb-6 leading-relaxed">
+              <p className="text-lg mb-6 leading-relaxed text-muted-foreground">
                 A passionate creator based in San Francisco with over 8 years of experience in design and development. 
                 I've had the privilege of working with clients across various industries, helping them bring their 
                 digital visions to life.
               </p>
               
-              <p className="text-lg mb-8 leading-relaxed">
+              <p className="text-lg mb-8 leading-relaxed text-muted-foreground">
                 My approach combines creative thinking with technical expertise to deliver
                 solutions that not only look great but also perform exceptionally well.
                 I believe in the power of clean design, intuitive user experiences, and
@@ -155,7 +155,7 @@ const Index = () => {
                 {['Creative', 'Strategic', 'Detail-oriented', 'Problem solver'].map((skill) => (
                   <span 
                     key={skill}
-                    className="px-4 py-2 bg-portfolio-accent rounded-full text-sm font-medium"
+                    className="px-4 py-2 bg-accent text-accent-foreground rounded-full text-sm font-medium border border-border"
                   >
                     {skill}
                   </span>
@@ -165,7 +165,7 @@ const Index = () => {
               <div data-aos="fade-up" data-aos-delay="600">
                 <a 
                   href="#contact" 
-                  className="inline-flex items-center px-6 py-3 bg-primary text-white rounded-full hover:bg-primary/90 transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
+                  className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
                 >
                   Get In Touch
                 </a>
@@ -176,8 +176,8 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="section py-24 md:py-32 bg-portfolio-soft-bg relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 -z-10"></div>
+      <section id="contact" className="section py-24 md:py-32 bg-background relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 dark:from-slate-800/20 dark:to-slate-900/20 -z-10"></div>
         
         <div className="container px-4 mx-auto">
           <div className="text-center max-w-2xl mx-auto">
@@ -192,7 +192,7 @@ const Index = () => {
             <div className="h-1 w-20 bg-primary mx-auto rounded-full mb-8" data-aos="fade-up" data-aos-delay="300"></div>
             
             <p 
-              className="text-lg mb-10 leading-relaxed"
+              className="text-lg mb-10 leading-relaxed text-muted-foreground"
               data-aos="fade-up"
               data-aos-delay="400"
             >
@@ -247,10 +247,10 @@ const Index = () => {
       </section>
 
       {/* Footer Section */}
-      <footer className="py-8 bg-white border-t border-portfolio-border">
+      <footer className="py-8 bg-card border-t border-border">
         <div className="container px-4 mx-auto">
           <div className="text-center">
-            <p className="text-portfolio-muted">
+            <p className="text-muted-foreground">
               &copy; {new Date().getFullYear()} FILM. All rights reserved.
             </p>
           </div>
@@ -271,8 +271,8 @@ const SocialLink = ({ href, icon, label, delay }) => {
       data-aos="zoom-in"
       data-aos-delay={delay}
     >
-      <div className="social-icon flex items-center justify-center h-14 w-14 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-        <div className="social-icon text-portfolio-muted group-hover:text-primary">
+      <div className="social-icon flex items-center justify-center h-14 w-14 rounded-full bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div className="social-icon text-muted-foreground group-hover:text-primary">
           {icon}
         </div>
       </div>

@@ -63,7 +63,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Portfolio-specific colors that work in both light and dark modes
+				// Portfolio-specific colors that work beautifully in both light and dark modes
 				portfolio: {
 					'soft-bg': 'hsl(var(--background))',
 					'accent': 'hsl(var(--accent))',
