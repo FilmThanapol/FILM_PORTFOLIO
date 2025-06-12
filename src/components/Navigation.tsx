@@ -1,11 +1,14 @@
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Switch } from "@/components/ui/switch";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,16 +49,27 @@ const Navigation = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-portfolio-text hover:text-primary font-medium transition-colors duration-200"
+              className="text-portfolio-text dark:text-gray-200 hover:text-primary font-medium transition-colors duration-200"
             >
               {item.name}
             </a>
           ))}
+          
+          {/* Dark Mode Toggle */}
+          <div className="flex items-center space-x-2">
+            <Sun className="h-4 w-4 text-portfolio-text dark:text-gray-200" />
+            <Switch
+              checked={isDark}
+              onCheckedChange={toggleTheme}
+              className="data-[state=checked]:bg-primary"
+            />
+            <Moon className="h-4 w-4 text-portfolio-text dark:text-gray-200" />
+          </div>
         </nav>
 
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-portfolio-text p-2"
+          className="md:hidden text-portfolio-text dark:text-gray-200 p-2"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -75,12 +89,26 @@ const Navigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-portfolio-text hover:text-primary py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="text-portfolio-text dark:text-gray-200 hover:text-primary py-2 px-4 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
+            
+            {/* Mobile Dark Mode Toggle */}
+            <div className="flex items-center justify-between py-2 px-4">
+              <span className="text-portfolio-text dark:text-gray-200 font-medium">Dark Mode</span>
+              <div className="flex items-center space-x-2">
+                <Sun className="h-4 w-4 text-portfolio-text dark:text-gray-200" />
+                <Switch
+                  checked={isDark}
+                  onCheckedChange={toggleTheme}
+                  className="data-[state=checked]:bg-primary"
+                />
+                <Moon className="h-4 w-4 text-portfolio-text dark:text-gray-200" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
