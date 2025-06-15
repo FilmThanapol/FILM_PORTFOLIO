@@ -59,6 +59,6 @@ You are free to use, modify, and distribute it for both personal and commercial 
 
 ---
 ## 🙌 Credits
-- shadcn/ui – for the elegant UI components
-- Tailwind CSS – for utility-first styling
-- Lovable – for assisting in the initial layout
+- [shadcn/ui](https://ui.shadcn.com/) – Elegant UI component library  
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first styling  
+- [Lovable](https://lovable.dev/) – For assisting in project scaffolding
