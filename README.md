@@ -35,3 +35,7 @@ npm run dev
 - 🎨 Tailwind CSS – Utility-first CSS framework
 - 🧩 shadcn/ui – Modern component library based on Radix UI
 - ✨ TypeScript – Typed superset of JavaScript
+---
+🌐 Live Demo  
+👉 [View the Live Demo](https://film-portfolio-seven.vercel.app/)
+
