@@ -36,7 +36,17 @@ npm run dev
 - 🧩 shadcn/ui – Modern component library based on Radix UI
 - ✨ TypeScript – Typed superset of JavaScript
 ---
-🌐 Live Demo  
+## 🌐 Live Demo  
 [![View Demo](https://img.shields.io/badge/🚀_Live_Demo-Click_here-blue?style=for-the-badge)](https://film-portfolio-seven.vercel.app/)
+🧭 Hosted on **Vercel**
+---
+## 📄 License
 
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute it for both personal and commercial purposes.
 
+---
+## 🙌 Credits
+- shadcn/ui – for the elegant UI components
+- Tailwind CSS – for utility-first styling
+- Lovable – for assisting in the initial layout
