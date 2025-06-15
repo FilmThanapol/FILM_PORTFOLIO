@@ -37,5 +37,6 @@ npm run dev
 - ✨ TypeScript – Typed superset of JavaScript
 ---
 🌐 Live Demo  
-👉 [View the Live Demo](https://film-portfolio-seven.vercel.app/)
+[![View Demo](https://img.shields.io/badge/🚀_Live_Demo-Click_here-blue?style=for-the-badge)](https://film-portfolio-seven.vercel.app/)
+
 
