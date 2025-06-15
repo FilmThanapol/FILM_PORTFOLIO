@@ -30,11 +30,21 @@ npm install
 npm run dev
 ```
 ## 🧰 Tech Stack
-- ⚡ Vite – Lightning-fast build tool and dev server
-- ⚛️ React – Popular JavaScript library for building user interfaces
-- 🎨 Tailwind CSS – Utility-first CSS framework
-- 🧩 shadcn/ui – Modern component library based on Radix UI
-- ✨ TypeScript – Typed superset of JavaScript
+- ⚡ **Vite** – Lightning-fast build tool and dev server  
+- 🟪 **React** – JavaScript library for building user interfaces  
+- 🎨 **Tailwind CSS** – Utility-first CSS framework  
+- 🧩 **shadcn/ui** – Accessible component library based on Radix UI  
+- ✨ **TypeScript** – Static typing for better developer experience
+---
+## 🚢 Deployment
+
+You can deploy this project on:
+
+- 🌐 [Vercel](https://vercel.com/)
+- ☁️ [Netlify](https://www.netlify.com/)
+- 📦 GitHub Pages (via static export)
+- 🔧 Any Node.js-compatible hosting
+
 ---
 ## 🌐 Live Demo  
 [![View Demo](https://img.shields.io/badge/🚀_Live_Demo-Click_here-blue?style=for-the-badge)](https://film-portfolio-seven.vercel.app/)
