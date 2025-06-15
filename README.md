@@ -38,7 +38,9 @@ npm run dev
 ---
 ## 🌐 Live Demo  
 [![View Demo](https://img.shields.io/badge/🚀_Live_Demo-Click_here-blue?style=for-the-badge)](https://film-portfolio-seven.vercel.app/)
+
 🧭 Hosted on **Vercel**
+
 ---
 ## 📄 License
 
