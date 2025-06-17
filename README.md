@@ -1,73 +1,64 @@
-# Welcome to your Lovable project
+# 🌸 Film Portfolio – React + Vite + Tailwind Starter
 
-## Project info
+This is a personal portfolio website built using **React**, **Vite**, and **Tailwind CSS**, with a sleek and modern UI powered by **shadcn/ui**.  
+The initial structure and layout were assisted using [Lovable](https://lovable.dev/) to accelerate prototyping and setup.
 
-**URL**: https://lovable.dev/projects/f3559222-135c-434d-9be6-7d2dc362364a
+---
 
-## How can I edit this code?
+## 🔧 Getting Started
 
-There are several ways of editing your application.
+To run this project locally, follow these steps:
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/f3559222-135c-434d-9be6-7d2dc362364a) and start prompting.
+- Node.js (v18 or later)
+- npm (or yarn)
 
-Changes made via Lovable will be committed automatically to this repo.
+> Tip: You can install Node.js using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-**Use your preferred IDE**
+### Setup
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# 1. Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 2. Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Run the development server
 npm run dev
 ```
+## 🧰 Tech Stack
+- ⚡ **Vite** – Lightning-fast build tool and dev server  
+- 🟪 **React** – JavaScript library for building user interfaces  
+- 🎨 **Tailwind CSS** – Utility-first CSS framework  
+- 🧩 **shadcn/ui** – Accessible component library based on Radix UI  
+- ✨ **TypeScript** – Static typing for better developer experience
+---
+## 🚢 Deployment
 
-**Edit a file directly in GitHub**
+You can deploy this project on:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- 🌐 [Vercel](https://vercel.com/)
+- ☁️ [Netlify](https://www.netlify.com/)
+- 📦 GitHub Pages (via static export)
+- 🔧 Any Node.js-compatible hosting
 
-**Use GitHub Codespaces**
+---
+## 🌐 Live Demo  
+[![View Demo](https://img.shields.io/badge/🚀_Live_Demo-Click_here-blue?style=for-the-badge)](https://film-portfolio-seven.vercel.app/)
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🧭 Hosted on **Vercel**
 
-## What technologies are used for this project?
+---
+## 📄 License
 
-This project is built with:
+This project is licensed under the MIT License.
+You are free to use, modify, and distribute it for both personal and commercial purposes.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/f3559222-135c-434d-9be6-7d2dc362364a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+## 🙌 Credits
+- [shadcn/ui](https://ui.shadcn.com/) – Elegant UI component library  
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first styling  
+- [Lovable](https://lovable.dev/) – For assisting in project scaffolding
