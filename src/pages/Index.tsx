@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Navigation from "../components/Navigation";
 
+
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -109,7 +110,7 @@ const Index = () => {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
                   <img
-                    src="https://www.liveonegoodlife.com/wp-content/uploads/2021/03/word-image.jpeg"
+                    src="/public/img/FILM.jpg"
                     alt="Thanapol Chiraporn"
                     className="w-full h-auto object-cover aspect-[3/4]"
                   />
