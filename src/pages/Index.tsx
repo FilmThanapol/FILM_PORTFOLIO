@@ -110,7 +110,7 @@ const Index = () => {
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
                   <img
-                    src="/public/img/FILM1.jpg"
+                    src="/img/FILM1.jpg"
                     alt="Thanapol Chiraporn"
                     className="w-full h-auto object-cover aspect-[3/4]"
                   />
