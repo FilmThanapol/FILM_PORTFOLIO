@@ -9,7 +9,6 @@ const StackedPhotoCarousel = () => {
   const [isDragging, setIsDragging] = useState(false);
 
   const images = [
-    "/lovable-uploads/5826de66-4830-4a1b-a87f-52873d5ab339.png",
     "/img/FILM1.jpg",
     "/img/FILM2.jpg",
     "/img/FILM3.jpg",
@@ -112,10 +111,10 @@ const StackedPhotoCarousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-sm mx-auto">
+    <div className="relative w-full max-w-md mx-auto">
       {/* Stacked Images Container */}
       <div 
-        className="relative h-96 cursor-grab active:cursor-grabbing select-none"
+        className="relative h-[28rem] cursor-grab active:cursor-grabbing select-none"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -133,7 +132,17 @@ const StackedPhotoCarousel = () => {
             <img
               src={image}
               alt={`Portfolio photo ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover image-render-crisp portfolio-image-enhanced"
+              style={{
+                imageRendering: 'crisp-edges' as any,
+                filter: 'contrast(1.1) saturate(1.05) brightness(1.02)',
+                backfaceVisibility: 'hidden',
+                transform: 'translateZ(0)',
+                WebkitFontSmoothing: 'antialiased',
+                MozOsxFontSmoothing: 'grayscale',
+              }}
+              loading="eager"
+              decoding="sync"
               draggable={false}
             />
             
