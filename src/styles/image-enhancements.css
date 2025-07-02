@@ -1,35 +1,39 @@
 /* Image Quality Enhancement Styles */
 
 .image-render-crisp {
-  /* High-quality image rendering */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: -webkit-crisp-edges;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  image-rendering: pixelated;
-  
   /* Hardware acceleration for smoother rendering */
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
-  
+
   /* Anti-aliasing improvements */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   /* Prevent blurry scaling */
   -ms-interpolation-mode: bicubic;
-  
-  /* Enhanced sharpness and contrast */
-  filter: contrast(1.08) saturate(1.03) brightness(1.01);
-  
-  /* Smooth transitions */
-  transition: filter 0.3s ease;
 }
 
-.image-render-crisp:hover {
-  /* Slight enhancement on hover */
-  filter: contrast(1.12) saturate(1.06) brightness(1.02);
+/* Desktop-only enhancements */
+@media (min-width: 768px) {
+  .image-render-crisp {
+    /* High-quality image rendering for desktop */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+
+    /* Enhanced sharpness and contrast */
+    filter: contrast(1.08) saturate(1.03) brightness(1.01);
+
+    /* Smooth transitions */
+    transition: filter 0.3s ease;
+  }
+
+  .image-render-crisp:hover {
+    /* Slight enhancement on hover */
+    filter: contrast(1.12) saturate(1.06) brightness(1.02);
+  }
 }
 
 /* High-DPI display optimizations */
@@ -46,35 +50,36 @@
 
 /* Specific enhancements for portfolio images */
 .portfolio-image-enhanced {
-  /* Maximum quality settings */
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  
-  /* Advanced filtering for professional photos */
-  filter: 
-    contrast(1.1) 
-    saturate(1.05) 
-    brightness(1.02) 
-    hue-rotate(0deg) 
-    sepia(0%) 
-    grayscale(0%);
-  
-  /* Smooth scaling */
+  /* Basic optimization for all devices */
   transform-origin: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-image-enhanced:hover {
-  /* Subtle enhancement on interaction */
-  filter: 
-    contrast(1.15) 
-    saturate(1.08) 
-    brightness(1.03) 
-    hue-rotate(0deg) 
-    sepia(0%) 
-    grayscale(0%);
-  
-  transform: scale(1.02);
+/* Desktop-only portfolio enhancements */
+@media (min-width: 768px) {
+  .portfolio-image-enhanced {
+    /* Maximum quality settings for desktop */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+
+    /* Advanced filtering for professional photos */
+    filter:
+      contrast(1.1)
+      saturate(1.05)
+      brightness(1.02);
+
+    /* Smooth scaling */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .portfolio-image-enhanced:hover {
+    /* Subtle enhancement on interaction */
+    filter:
+      contrast(1.15)
+      saturate(1.08)
+      brightness(1.03);
+
+    transform: scale(1.02);
+  }
 }
 
 /* Loading state optimization */

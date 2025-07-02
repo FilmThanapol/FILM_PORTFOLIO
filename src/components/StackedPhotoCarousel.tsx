@@ -16,8 +16,11 @@ const StackedPhotoCarousel = () => {
     "/img/FILM5.jpg"
   ];
 
-  // Auto-advance carousel every 5 seconds
+  // Auto-advance carousel every 5 seconds (disabled on mobile for performance)
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return; // Disable auto-advance on mobile
+
     const interval = setInterval(() => {
       if (!isDragging) {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -87,21 +90,35 @@ const StackedPhotoCarousel = () => {
   const getImageStyle = (index: number) => {
     const diff = index - currentIndex;
     const absIndex = Math.abs(diff);
-    
-    // Only show current and next 2 images in stack
-    if (absIndex > 2) return { display: 'none' };
-    
-    const baseRotation = diff * 3; // Slight rotation for each image
-    const baseOffset = absIndex * 8; // Offset each image slightly
-    const scale = 1 - (absIndex * 0.05); // Scale down background images
+    const isMobile = window.innerWidth < 768;
+
+    // Simplified for mobile: only show current image
+    if (isMobile && absIndex > 0) return { display: 'none' };
+    // Desktop: show current and next 2 images in stack
+    if (!isMobile && absIndex > 2) return { display: 'none' };
+
+    // Simplified transforms for mobile
+    if (isMobile) {
+      return {
+        transform: 'translateZ(0)',
+        zIndex: 1,
+        opacity: 1,
+        transition: isDragging ? 'none' : 'opacity 0.3s ease',
+      };
+    }
+
+    // Full desktop effects
+    const baseRotation = diff * 3;
+    const baseOffset = absIndex * 8;
+    const scale = 1 - (absIndex * 0.05);
     const zIndex = images.length - absIndex;
     const opacity = 1 - (absIndex * 0.2);
-    
+
     return {
       transform: `
-        translateX(${diff * 12}px) 
-        translateY(${baseOffset}px) 
-        rotate(${baseRotation}deg) 
+        translateX(${diff * 12}px)
+        translateY(${baseOffset}px)
+        rotate(${baseRotation}deg)
         scale(${scale})
       `,
       zIndex,
@@ -113,8 +130,11 @@ const StackedPhotoCarousel = () => {
   return (
     <div className="relative w-full max-w-md mx-auto">
       {/* Stacked Images Container */}
-      <div 
+      <div
         className="relative h-[28rem] cursor-grab active:cursor-grabbing select-none"
+        style={{
+          willChange: isDragging ? 'transform' : 'auto',
+        }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -132,17 +152,15 @@ const StackedPhotoCarousel = () => {
             <img
               src={image}
               alt={`Portfolio photo ${index + 1}`}
-              className="w-full h-full object-cover image-render-crisp portfolio-image-enhanced"
+              className="w-full h-full object-cover"
               style={{
-                imageRendering: 'crisp-edges' as any,
-                filter: 'contrast(1.1) saturate(1.05) brightness(1.02)',
                 backfaceVisibility: 'hidden',
                 transform: 'translateZ(0)',
-                WebkitFontSmoothing: 'antialiased',
-                MozOsxFontSmoothing: 'grayscale',
+                // Lighter filters for mobile performance
+                filter: window.innerWidth < 768 ? 'none' : 'contrast(1.05) saturate(1.02)',
               }}
-              loading="eager"
-              decoding="sync"
+              loading={index === currentIndex ? "eager" : "lazy"}
+              decoding="async"
               draggable={false}
             />
             

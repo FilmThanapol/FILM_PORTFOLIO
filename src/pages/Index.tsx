@@ -9,19 +9,22 @@ const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Initialize AOS with enhanced settings
+    // Initialize AOS with mobile-optimized settings
+    const isMobile = window.innerWidth < 768;
+
     AOS.init({
-      duration: 800,
+      duration: isMobile ? 400 : 800, // Faster animations on mobile
       easing: 'ease-out-cubic',
-      once: false,
-      mirror: true,
-      offset: 120,
+      once: true, // Run animations only once for better performance
+      mirror: false, // Disable mirror on mobile
+      offset: isMobile ? 50 : 120, // Smaller offset on mobile
+      disable: isMobile ? 'mobile' : false, // Consider disabling on very small screens
     });
-    
+
     // Set loaded after a small delay to ensure smooth animation start
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 100);
+    }, isMobile ? 50 : 100);
 
     return () => clearTimeout(timer);
   }, []);
@@ -111,27 +114,27 @@ const Index = () => {
                 <div className="relative">
                   <StackedPhotoCarousel />
                   
-                  {/* Creative Background Elements */}
+                  {/* Creative Background Elements - Simplified for mobile */}
                   <div
-                    className="absolute -bottom-12 -right-12 h-56 w-56 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-full blur-xl -z-10 transition-all duration-700 group-hover:scale-110 group-hover:from-primary/30"
+                    className="absolute -bottom-12 -right-12 h-56 w-56 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-full blur-xl -z-10 md:transition-all md:duration-700 md:group-hover:scale-110 md:group-hover:from-primary/30"
                     data-aos="zoom-in"
                     data-aos-delay="600"
                   ></div>
                   <div
-                    className="absolute -top-8 -left-8 h-32 w-32 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl rotate-12 -z-10 transition-all duration-700 group-hover:rotate-6 group-hover:scale-105"
+                    className="absolute -top-8 -left-8 h-32 w-32 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl rotate-12 -z-10 md:transition-all md:duration-700 md:group-hover:rotate-6 md:group-hover:scale-105"
                     data-aos="zoom-in"
                     data-aos-delay="700"
                   ></div>
                   <div
-                    className="absolute top-1/3 -left-4 h-20 w-20 bg-gradient-to-br from-primary/15 to-transparent rounded-full -z-10 transition-all duration-500 group-hover:scale-125"
+                    className="absolute top-1/3 -left-4 h-20 w-20 bg-gradient-to-br from-primary/15 to-transparent rounded-full -z-10 md:transition-all md:duration-500 md:group-hover:scale-125"
                     data-aos="fade-in"
                     data-aos-delay="800"
                   ></div>
 
-                  {/* Floating Particles */}
-                  <div className="absolute top-8 left-8 h-2 w-2 bg-primary/40 rounded-full animate-bounce delay-100"></div>
-                  <div className="absolute bottom-20 left-12 h-1.5 w-1.5 bg-accent/50 rounded-full animate-bounce delay-300"></div>
-                  <div className="absolute top-1/2 right-8 h-1 w-1 bg-primary/30 rounded-full animate-pulse delay-500"></div>
+                  {/* Floating Particles - Hidden on mobile */}
+                  <div className="hidden md:block absolute top-8 left-8 h-2 w-2 bg-primary/40 rounded-full animate-bounce delay-100"></div>
+                  <div className="hidden md:block absolute bottom-20 left-12 h-1.5 w-1.5 bg-accent/50 rounded-full animate-bounce delay-300"></div>
+                  <div className="hidden md:block absolute top-1/2 right-8 h-1 w-1 bg-primary/30 rounded-full animate-pulse delay-500"></div>
                 </div>
               </div>
             </div>
