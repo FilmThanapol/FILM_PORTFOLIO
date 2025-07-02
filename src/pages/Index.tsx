@@ -1,117 +1,9 @@
-
 import { useEffect, useState } from "react";
-import { Github, Gitlab, Instagram, Linkedin, Facebook, Mail, ChevronLeft, ChevronRight } from "lucide-react";
+import { Github, Gitlab, Instagram, Linkedin, Facebook, Mail } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Navigation from "../components/Navigation";
-
-
-// Image Carousel Component
-const ImageCarousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-
-  const images = [
-    "/img/FILM1.jpg",
-    "/img/FILM2.jpg",
-    "/img/FILM3.jpg",
-    "/img/FILM4.jpg",
-    "/img/FILM5.jpg"
-  ];
-
-  // Auto-advance carousel every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  // Handle touch events for swipe functionality
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > 50;
-    const isRightSwipe = distance < -50;
-
-    if (isLeftSwipe) {
-      goToNext();
-    } else if (isRightSwipe) {
-      goToPrevious();
-    }
-  };
-
-  return (
-    <div className="relative group">
-      <div
-        className="rounded-2xl overflow-hidden shadow-2xl border border-border relative"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        <img
-          src={images[currentIndex]}
-          alt={`Thanapol Chiraporn - Photo ${currentIndex + 1}`}
-          className="w-full h-auto object-cover aspect-[3/4] transition-opacity duration-500"
-        />
-
-        {/* Navigation arrows */}
-        <button
-          onClick={goToPrevious}
-          className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          aria-label="Previous image"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-
-        <button
-          onClick={goToNext}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          aria-label="Next image"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-      </div>
-
-      {/* Dots indicator */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-              index === currentIndex
-                ? 'bg-primary'
-                : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-            }`}
-            aria-label={`Go to image ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+import StackedPhotoCarousel from "../components/StackedPhotoCarousel";
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -215,40 +107,32 @@ const Index = () => {
               data-aos-delay="300"
             >
               <div className="relative group">
-                {/* Enhanced Image Container with Creative Frame */}
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-accent/10 p-1">
-                  <div className="relative overflow-hidden rounded-[22px] bg-card shadow-2xl transition-all duration-700 group-hover:shadow-[0_25px_60px_-12px_rgba(var(--primary)_/_0.4)] group-hover:-translate-y-2">
-                    <ImageCarousel />
-                    
-                    {/* Animated Border Glow */}
-                    <div className="absolute inset-0 rounded-[22px] bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
-                    {/* Corner Accent */}
-                    <div className="absolute top-4 right-4 h-3 w-3 bg-primary rounded-full opacity-60 animate-pulse"></div>
-                  </div>
+                {/* Enhanced Stacked Photo Container */}
+                <div className="relative">
+                  <StackedPhotoCarousel />
+                  
+                  {/* Creative Background Elements */}
+                  <div
+                    className="absolute -bottom-12 -right-12 h-56 w-56 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-full blur-xl -z-10 transition-all duration-700 group-hover:scale-110 group-hover:from-primary/30"
+                    data-aos="zoom-in"
+                    data-aos-delay="600"
+                  ></div>
+                  <div
+                    className="absolute -top-8 -left-8 h-32 w-32 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl rotate-12 -z-10 transition-all duration-700 group-hover:rotate-6 group-hover:scale-105"
+                    data-aos="zoom-in"
+                    data-aos-delay="700"
+                  ></div>
+                  <div
+                    className="absolute top-1/3 -left-4 h-20 w-20 bg-gradient-to-br from-primary/15 to-transparent rounded-full -z-10 transition-all duration-500 group-hover:scale-125"
+                    data-aos="fade-in"
+                    data-aos-delay="800"
+                  ></div>
+
+                  {/* Floating Particles */}
+                  <div className="absolute top-8 left-8 h-2 w-2 bg-primary/40 rounded-full animate-bounce delay-100"></div>
+                  <div className="absolute bottom-20 left-12 h-1.5 w-1.5 bg-accent/50 rounded-full animate-bounce delay-300"></div>
+                  <div className="absolute top-1/2 right-8 h-1 w-1 bg-primary/30 rounded-full animate-pulse delay-500"></div>
                 </div>
-
-                {/* Creative Background Elements */}
-                <div
-                  className="absolute -bottom-12 -right-12 h-56 w-56 bg-gradient-to-br from-primary/20 via-primary/10 to-transparent rounded-full blur-xl -z-10 transition-all duration-700 group-hover:scale-110 group-hover:from-primary/30"
-                  data-aos="zoom-in"
-                  data-aos-delay="600"
-                ></div>
-                <div
-                  className="absolute -top-8 -left-8 h-32 w-32 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl rotate-12 -z-10 transition-all duration-700 group-hover:rotate-6 group-hover:scale-105"
-                  data-aos="zoom-in"
-                  data-aos-delay="700"
-                ></div>
-                <div
-                  className="absolute top-1/3 -left-4 h-20 w-20 bg-gradient-to-br from-primary/15 to-transparent rounded-full -z-10 transition-all duration-500 group-hover:scale-125"
-                  data-aos="fade-in"
-                  data-aos-delay="800"
-                ></div>
-
-                {/* Floating Particles */}
-                <div className="absolute top-8 left-8 h-2 w-2 bg-primary/40 rounded-full animate-bounce delay-100"></div>
-                <div className="absolute bottom-20 left-12 h-1.5 w-1.5 bg-accent/50 rounded-full animate-bounce delay-300"></div>
-                <div className="absolute top-1/2 right-8 h-1 w-1 bg-primary/30 rounded-full animate-pulse delay-500"></div>
               </div>
             </div>
             
